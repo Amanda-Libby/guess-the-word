@@ -24,6 +24,19 @@ guessLetterButton.addEventListener("click", function (e) {
     letterInput.value = "";
 });
 
+const validateInput = function (input) {
+    const acceptedLetter = /[a-zA-Z]/;
+    if (input.length === 0) {
+        message.innerText = "add a letter";
+    } else if (input.length > 1) {
+        message.innerText = "Only enter one letter";
+    } else if (!input.match(acceptedLetter)) {
+        message.innerText = "that's not a letter";
+    } else {
+        return input;
+    }
+};
+
 
 
 
