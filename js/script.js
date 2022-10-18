@@ -6,6 +6,7 @@ const remainingGuessesElement = document.querySelector(".remaining");
 const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const word = "magnolia";
+const guessedLetters = [];
 
 const placeholder = function (word) {
     const placeholderLetters = [];
@@ -19,10 +20,18 @@ const placeholder = function (word) {
 
 guessLetterButton.addEventListener("click", function (e) {
     e.preventDefault();
+    // Empty message paragraph.  don't use value because it is text based.
+    message.innerText = "";
+    
+    // Let's grab what was entered in the input
     const guess = letterInput.value;
     console.log(guess);
     letterInput.value = "";
-});
+
+    validateInput(input);
+    const savedInput = validateInput();
+    console.log(savedInput);
+});  // This section isn't finished because I had trouble with the last step.
 
 const validateInput = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
@@ -36,6 +45,18 @@ const validateInput = function (input) {
         return input;
     }
 };
+
+const makeGuess = function (guess) {
+    guess = guess.toUpperCase();
+    if (guessedLetters.includes(guess)) {
+        message.innerText = "You already guessed that letter."
+    } else {
+        guessedLetters.push(guess);
+        console.log(guessedLetters)
+    }
+};
+
+
 
 
 
