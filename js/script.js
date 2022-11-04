@@ -75,6 +75,8 @@ const updateWordInProgress = function (guessedLetters) {
     
 }
 
+// add some comments on what all the functions do.
+
 
 
 
