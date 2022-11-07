@@ -54,6 +54,7 @@ const makeGuess = function (guess) {
         guessedLetters.push(guess);
         console.log(guessedLetters)
         showGuessedLetters();
+        updateWordInProgress();
     }
 };
 
@@ -72,8 +73,15 @@ const updateWordInProgress = function (guessedLetters) {
     const wordUpper = word.toUpperCase();
     const wordArray = wordUpper.split("");
     console.log(wordArray);
-    
-}
+    const revealWord = [];
+    for (const letter of wordArray) {
+        if (guessedLetters.includes(letter)) {
+            revealWord.push(letter.toUpperCase());
+        } else {
+            revealWord.push("●")
+        }
+    } // Ask skillcrush to explain how this function works
+};
 
 // add some comments on what all the functions do.
 
