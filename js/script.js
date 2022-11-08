@@ -83,10 +83,10 @@ const updateWordInProgress = function (guessedLetters) {
     } // Ask skillcrush to explain how this function works
 };
 
+
+
+
+
+
+
 // add some comments on what all the functions do.
-
-
-
-
-
-
