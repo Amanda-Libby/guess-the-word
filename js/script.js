@@ -83,6 +83,11 @@ const updateWordInProgress = function (guessedLetters) {
     } // Ask skillcrush to explain how this function works
 };
 
+const guessedWord = function () {
+    // if statement to check if their word in progress matches the word they should guess
+    
+}
+
 
 
 
