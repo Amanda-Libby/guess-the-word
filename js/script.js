@@ -7,6 +7,7 @@ const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const word = "magnolia";
 const guessedLetters = [];
+const remainingGuesses = 8;
 
 const placeholder = function (word) {
     const placeholderLetters = [];
@@ -85,8 +86,11 @@ const updateWordInProgress = function (guessedLetters) {
 
 const guessedWord = function () {
     // if statement to check if their word in progress matches the word they should guess
-    
-}
+
+} // This function is in the last section of the "Display word and guessed Letters" step of the project
+
+
+
 
 
 
