@@ -89,6 +89,8 @@ const guessedWord = function () {
 
 } // This function is in the last section of the "Display word and guessed Letters" step of the project
 
+// When I get stuck look back at my previous code for inspiration and also ask Slack for help.
+
 
 
 
