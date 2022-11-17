@@ -32,7 +32,8 @@ guessLetterButton.addEventListener("click", function (e) {
     validateInput(input);
     const savedInput = validateInput();
     console.log(savedInput);
-});  // This section isn't finished because I had trouble with the last step.
+});  // This section isn't finished because I had trouble with the last step.  
+// Figure out where this section is and ask about it.  Although i might have already asked about that on Slack
 
 const validateInput = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
