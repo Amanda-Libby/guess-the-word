@@ -96,9 +96,19 @@ const guessedWord = function () {
 
 
 
-
+/* 
+<a href="tel:8134504187">
+<i class="fa-solid fa-phone fa-2x"></i>
+<br>
+<br>
+813-450-4187
+</a>
+*/
+// this is for my phone number and making it so if you click on my number it will automatically call the number
 
 
 
 
 // add some comments on what all the functions do.
+
+// learn PHP since it is similar to JavaScript
