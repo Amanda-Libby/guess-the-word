@@ -26,14 +26,16 @@ guessLetterButton.addEventListener("click", function (e) {
     
     // Let's grab what was entered in the input
     const guess = letterInput.value;
-    console.log(guess);
-    letterInput.value = "";
+    // Let's make sure that it is a single letter
+    const goodGuess = validateInput(guess);
 
-    validateInput(input);
-    const savedInput = validateInput();
-    console.log(savedInput);
-});  // This section isn't finished because I had trouble with the last step.  
-// Figure out where this section is and ask about it.  Although i might have already asked about that on Slack
+    if (goodGuess) {
+        // We've got a letter!  Let's make a guess!
+        makeGuess(guess);
+    }
+    letterInput.value = "";
+}); 
+
 
 const validateInput = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
@@ -83,9 +85,13 @@ const updateWordInProgress = function (guessedLetters) {
             revealWord.push("●")
         }
     } // Ask skillcrush to explain how this function works
-};
+}; 
 
 const guessedWord = function () {
+    // this one that I'm struggling with is the last section in the "Display word and Guessed Letters step in the project"
+    
+
+    
     // if statement to check if their word in progress matches the word they should guess
 
 } // This function is in the last section of the "Display word and guessed Letters" step of the project
