@@ -84,17 +84,19 @@ const updateWordInProgress = function (guessedLetters) {
         } else {
             revealWord.push("●")
         }
-    } // Ask skillcrush to explain how this function works
+    } 
+    wordInProgress.innerText = revealWord.join("");
+    checkIfWin();
+    // Ask skillcrush to explain how this function works
 }; 
 
-const guessedWord = function () {
-    // this one that I'm struggling with is the last section in the "Display word and Guessed Letters step in the project"
+const checkIfWin = function () {
+    if (word.toUpperCase === wordInProgress.innerText) {
+        message.classList.add("win");
+        message.innerHTML = `<p class="highlight">You guessed the correct word!  Congrats!</p>`;
+    }
     
-
-    
-    // if statement to check if their word in progress matches the word they should guess
-
-} // This function is in the last section of the "Display word and guessed Letters" step of the project
+} 
 
 // When I get stuck look back at my previous code for inspiration and also ask Slack for help.
 
@@ -111,10 +113,5 @@ const guessedWord = function () {
 </a>
 */
 // this is for my phone number and making it so if you click on my number it will automatically call the number
-
-
-
-
-// add some comments on what all the functions do.
 
 // learn PHP since it is similar to JavaScript
