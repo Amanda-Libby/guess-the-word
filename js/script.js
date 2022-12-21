@@ -9,6 +9,7 @@ const word = "magnolia";
 const guessedLetters = [];
 const remainingGuesses = 8;
 
+
 const placeholder = function (word) {
     const placeholderLetters = [];
     for (const letter of word) {
@@ -58,7 +59,9 @@ const makeGuess = function (guess) {
         guessedLetters.push(guess);
         console.log(guessedLetters)
         showGuessedLetters();
+        updateGuessesRemaining(guess);
         updateWordInProgress();
+        
     }
 };
 
@@ -89,6 +92,25 @@ const updateWordInProgress = function (guessedLetters) {
     checkIfWin();
     // Ask skillcrush to explain how this function works
 }; 
+
+const updateGuessesRemaining = function (guess) {
+    const upperWord = word.toUpperCase();
+    if (!upperWord.includes(guess)) {
+        // womp womp - bad guess, lose a chance
+        message.innerText = `Sorry, the word has no ${guess}`;
+        remainingGuesses -= 1;
+    } else {
+        message.innerText = `Good guess!  The word has the letter ${guess}`;
+    }
+
+    if (remainingGuesses === 0) {
+        message.innerHTML = `Game over!  The word was <span class="highlight">${word}</span>`;
+    } else if (remainingGuesses === 1) {
+        remainingGuessesSpan.innerText = `${remainingGuesses} guess`; // figure out this line of code.
+    } else {
+        remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;  // figure out this line as well.
+    }
+}; // look up when to use innerText and when to use innerHTML
 
 const checkIfWin = function () {
     if (word.toUpperCase === wordInProgress.innerText) {
