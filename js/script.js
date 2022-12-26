@@ -132,7 +132,16 @@ const checkIfWin = function () {
         message.innerHTML = `<p class="highlight">You guessed the correct word!  Congrats!</p>`;
     }
     
-} 
+};
+
+const startOver = function () {
+    guessLetterButton.classList.add("hide");
+    remainingGuessesElement.classList.add("hide");
+    guessedLettersElement.classList.add("hide");
+    playAgainButton.classList.remove("hide");
+};
+
+startOver();
 
 // When I get stuck look back at my previous code for inspiration and also ask Slack for help.
 
