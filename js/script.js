@@ -143,6 +143,18 @@ const startOver = function () {
 
 startOver();
 
+playAgainButton.addEventListener("click", function () {
+    message.classList.remove("win");
+    message.innerText = "";
+    guessedLettersElement.innerText = "";
+
+    remainingGuessesElement = 8;
+    guessedLetter = [];
+    remainingGuessesSpan.innerText = remainingGuessesElement;
+
+    
+})
+
 // When I get stuck look back at my previous code for inspiration and also ask Slack for help.
 
 
