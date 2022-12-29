@@ -144,15 +144,23 @@ const startOver = function () {
 startOver();
 
 playAgainButton.addEventListener("click", function () {
+    // reset all original values - grab new word
     message.classList.remove("win");
-    message.innerText = "";
-    guessedLettersElement.innerText = "";
-
+    guessedLetters = [];
     remainingGuessesElement = 8;
-    guessedLetter = [];
-    remainingGuessesSpan.innerText = remainingGuessesElement;
 
-    
+    remainingGuessesSpan.innerText = `${remainingGuesses}`
+    guessedLettersElement.innerText = "";
+    message.innerText = "";
+
+    // show the right UI elements
+    guessLetterButton.classList.remove("hide");
+    remainingGuessesElement.classList.remove("hide");
+    guessedLettersElement.classList.remove("hide");
+    playAgainButton.classList.add("hide");
+
+    //Grab a new word
+    getWord();
 })
 
 // When I get stuck look back at my previous code for inspiration and also ask Slack for help.
