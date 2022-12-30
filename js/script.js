@@ -164,7 +164,7 @@ playAgainButton.addEventListener("click", function () {
 })
 
 // When I get stuck look back at my previous code for inspiration and also ask Slack for help.
-
+// look at the project for common coding problems and solutions
 
 
 
