@@ -6,6 +6,7 @@ const remainingGuessesElement = document.querySelector(".remaining");
 const remainingGuessesSpan = document.querySelector(".remaining span");
 const message = document.querySelector(".message");
 const playAgainButton = document.querySelector(".play-again");
+// these global variables will select the following elements
 
 let word = "magnolia";
 const guessedLetters = [];
@@ -32,7 +33,7 @@ const placeholder = function (word) {
     }
     wordInProgress.innerText = placeholderLetters.join("");
 
-};
+}; // This function adds placeholders for each letter.
 
 guessLetterButton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -63,7 +64,7 @@ const validateInput = function (input) {
     } else {
         return input;
     }
-};
+}; // This function check's the player's input
 
 const makeGuess = function (guess) {
     guess = guess.toUpperCase();
@@ -77,7 +78,7 @@ const makeGuess = function (guess) {
         updateWordInProgress();
         
     }
-};
+};  // this function will capture input
 
 const showGuessedLetters = function () {
     // Clear the list first
@@ -88,7 +89,7 @@ const showGuessedLetters = function () {
         guessedLettersElement.append(li);
     }
 
-};
+}; // This function shows the guessed letters
 
 const updateWordInProgress = function (guessedLetters) {
     const wordUpper = word.toUpperCase();
@@ -105,7 +106,7 @@ const updateWordInProgress = function (guessedLetters) {
     wordInProgress.innerText = revealWord.join("");
     checkIfWin();
     // Ask skillcrush to explain how this function works
-}; 
+}; // This function updates the word in progress
 
 const updateGuessesRemaining = function (guess) {
     const upperWord = word.toUpperCase();
@@ -124,7 +125,8 @@ const updateGuessesRemaining = function (guess) {
     } else {
         remainingGuessesSpan.innerText = `${remainingGuesses} guesses`;  // figure out this line as well.
     }
-}; // look up when to use innerText and when to use innerHTML
+}; // This function counts the guesses remaining
+// look up when to use innerText and when to use innerHTML
 
 const checkIfWin = function () {
     if (word.toUpperCase === wordInProgress.innerText) {
@@ -132,14 +134,14 @@ const checkIfWin = function () {
         message.innerHTML = `<p class="highlight">You guessed the correct word!  Congrats!</p>`;
     }
     
-};
+}; // This function checks if the player won
 
 const startOver = function () {
     guessLetterButton.classList.add("hide");
     remainingGuessesElement.classList.add("hide");
     guessedLettersElement.classList.add("hide");
     playAgainButton.classList.remove("hide");
-};
+}; // This function hides and shows elements 
 
 startOver();
 
