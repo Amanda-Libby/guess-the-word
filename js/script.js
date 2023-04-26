@@ -75,7 +75,7 @@ const makeGuess = function (guess) {
         console.log(guessedLetters)
         showGuessedLetters();
         updateGuessesRemaining(guess);
-        updateWordInProgress();
+        updateWordInProgress(guessedLetters);
         
     }
 };  // this function will capture input
